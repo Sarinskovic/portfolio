@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-noise": "url(/noise.svg)",
+        "gradient-noise": "url(/portfolio/noise.svg)",
       },
       fontFamily: {
         sans: ["Space Mono", ...defaultTheme.fontFamily.sans],
