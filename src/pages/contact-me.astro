@@ -28,18 +28,25 @@ import About from "../assets/about.webp";
           <ul class="text-sunshade-50 space-y-1">
             <li>
               Instagram: <a
-                class="decoration-wavy hover:underline underline-offset-2"
+                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
                 href={INSTAGRAM_URL}>sarinskovic</a
               >
             </li>
             <li>
               Linkedin: <a
-                class="decoration-wavy hover:underline underline-offset-2"
+                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
                 href={LINKEDIN_URL}>Sara Stefanovic</a
               >
             </li>
             <li>Mail: {MAIL}</li>
             <li>Telefono: {PHONE}</li>
+            <li>
+              CV: <a
+                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
+                href={"/portfolio/cv.pdf"}
+                target="_blank">link</a
+              >
+            </li>
           </ul>
         </div>
         <Image class="h-48 sm:h-96 w-fit" src={About} alt={"about"} />
