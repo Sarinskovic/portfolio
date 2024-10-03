@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import BaseHead from "../components/BaseHead.astro";
+import CompanyBanner from "../components/CompanyBanner.astro";
+import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Asset1 from "../assets/01.webp";
+import Asset2 from "../assets/02.webp";
+import Asset3 from "../assets/03.webp";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <BaseLayout>
+    <Image src={Asset1} alt="" />
+    <section
+      class="text-md text-balance leading-relaxed container mx-auto sm:text-2xl px-4 bg-sunshade-50 p-2 rounded-sm"
+    >
+      Da sempre con la testa tra le parole e lo sguardo puntato al futuro, mi
+      sono laureata magistrale in Lingue e Comunicazione. Il mio percorso nel
+      mondo del copywriting è iniziato collaborando con testate e magazine
+      online, dove ho avuto l'occasione di scrivere praticamente di tutto: dal
+      cinema, alle nuove tecnologie, passando per la storia e la sostenibilità.
+      Ma non mi sono fermata lì! Nel frattempo, tra un articolo e l’altro, ho
+      dato sfogo alla mia creatività collaborando su diversi progetti social
+      media, dove ho imparato a destreggiarmi tra hashtag e copy ad effetto. La
+      passione per il digital mi ha portato a specializzarmi nella creazione di
+      testi SEO, dove il linguaggio incontra l’algoritmo in una danza perfetta,
+      dando vita a contenuti che non solo piacciono agli utenti, ma fanno anche
+      gola ai motori di ricerca. Oggi, con un pizzico di ironia, aiuto brand e
+      progetti a farsi notare nel vasto mondo online.
+    </section>
+    <Image src={Asset2} alt="" />
+    <section class="w-full bg-cyan-950">
+      {
+        COMPANY.map((c, index) => (
+          <CompanyBanner
+            title={c.title}
+            index={index}
+            logo={c.logo}
+            description={c.description}
+            path={c.path}
+          />
+        ))
+      }
+    </section>
+    <Image src={Asset3} alt="" />
+  </BaseLayout>
+</html>
