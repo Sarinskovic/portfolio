@@ -1,60 +1,58 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import type { CompanyProps as Props } from "../../types/company";
+import BaseHead from '../../components/BaseHead.astro'
+import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import type { CompanyProps as Props } from '../../types/company'
 
 export function getStaticPaths() {
-  return COMPANY.map((c) => ({
-    params: { company: c.path },
-    props: {
-      ...c,
-    },
-  }));
+	return COMPANY.map((c) => ({
+		params: { company: c.path },
+		props: {
+			...c
+		}
+	}))
 }
 
-const props = Astro.props;
+const props = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <BaseLayout>
-    <div class="px-4 min-h-lvh">
-      <section
-        class="container mx-auto bg-sunshade-50 my-4 rounded p-8 space-y-4"
-      >
-        <h1 class="text-4xl font-bold text-gray-800 flex items-center">
-          {props.title}
-        </h1>
-        <p class="text-xl text-gray-600">🖊️ {props.service}</p>
-        <p class="text-gray-500 text-lg text-balance my-2 font-semibold">
-          {props.description}
-        </p>
-        <ul class="list-disc pl-5 mt-4">
-          {
-            props.articles.map((article) => (
-              <li class="my-2 text-lg">
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-sunshade-600 underline-offset-4 decoration-wavy flex items-center hover:underline"
-                >
-                  {article.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </div>
-  </BaseLayout>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<BaseLayout>
+		<div class="min-h-lvh px-4">
+			<section class="bg-sunshade-50 container mx-auto my-4 space-y-4 rounded p-8">
+				<h1 class="flex items-center text-4xl font-bold text-gray-800">
+					{props.title}
+				</h1>
+				<p class="text-xl text-gray-600">🖊️ {props.service}</p>
+				<p class="my-2 text-balance text-lg font-semibold text-gray-500">
+					{props.description}
+				</p>
+				<ul class="mt-4 list-disc pl-5">
+					{
+						props.articles.map((article) => (
+							<li class="my-2 text-lg">
+								<a
+									href={article.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="text-sunshade-600 flex items-center decoration-wavy underline-offset-4 hover:underline"
+								>
+									{article.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</BaseLayout>
 </html>
 <style>
-  li::marker {
-    content: "📖 ";
-  }
+	li::marker {
+		content: '📖 ';
+	}
 </style>

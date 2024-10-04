@@ -1,0 +1,15 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+    font-family: 'BobbyJonesSoft';
+    src: url('/portfolio/fonts/BobbyJonesSoft.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BobbyJonesSoftOutline';
+    src: url('/portfolio/fonts/BobbyJonesSoftOutline.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

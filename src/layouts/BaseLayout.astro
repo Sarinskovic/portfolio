@@ -1,21 +1,21 @@
 ---
-import "@fontsource/space-mono";
-import Header from "../components/Header.astro";
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import Footer from "../components/Footer.astro";
+import '@fontsource/space-mono'
+import Header from '../components/Header.astro'
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import Footer from '../components/Footer.astro'
 ---
 
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
 
-  <body class="min-h-lvh bg-cyan-300 bg-gradient-noise">
-    <Header />
-    <main class="flex flex-col justify-center mt-[80px]">
-      <slot />
-    </main>
-    <Footer />
-  </body>
+	<body class="min-h-lvh bg-persian-200">
+		<Header />
+		<main class="mt-[80px] flex flex-col justify-center">
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>
