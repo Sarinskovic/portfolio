@@ -1,61 +1,79 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from "tailwindcss/defaultTheme";
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-noise": "url(/portfolio/noise.svg)",
-      },
-      fontFamily: {
-        sans: ["Space Mono", ...defaultTheme.fontFamily.sans],
-      },
-      colors: {
-        sunshade: {
-          DEFAULT: "#ff9924",
-          50: "#fff9ed",
-          100: "#fff2d4",
-          200: "#ffe2a8",
-          300: "#ffcc70",
-          400: "#ffaa37",
-          500: "#ff9924",
-          600: "#f07306",
-          700: "#c75707",
-          800: "#9e440e",
-          900: "#7f3a0f",
-          950: "#451b05",
-        },
-        sinbad: {
-          DEFAULT: "#449691",
-          50: "#f2f9f8",
-          100: "#ddf0ee",
-          200: "#bfe2df",
-          300: "#97cfca",
-          400: "#5fb1ab",
-          500: "#449691",
-          600: "#3b7f7e",
-          700: "#356969",
-          800: "#325758",
-          900: "#2d494c",
-          950: "#1a3032",
-        },
-        "rob-roy": {
-          DEFAULT: "#de9131",
-          50: "#fdf9ef",
-          100: "#faf1da",
-          200: "#f4dfb4",
-          300: "#edc985",
-          400: "#e5a952",
-          500: "#de9131",
-          600: "#d07826",
-          700: "#ad5e21",
-          800: "#8a4b22",
-          900: "#703f1e",
-          950: "#3c1f0e",
-        },
-      },
-    },
-  },
-  plugins: [],
-};
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	theme: {
+		extend: {
+			boxShadow: {
+				'left-bottom': '8px 8px 0 rgba(0, 0, 0, 1)', // 3px shadow to the left and bottom
+				'left-bottom-hover': '8px 8px 0 #ffffff' // 3px shadow to the left and bottom
+			},
+
+			backgroundImage: {
+				'gradient-noise': 'url(/portfolio/noise.svg)',
+				dots: 'url(/portfolio/dots.svg)'
+			},
+			fontFamily: {
+				sans: ['Space Mono', ...defaultTheme.fontFamily.sans],
+				bobbyJonesOutline: ['BobbyJonesSoftOutline'],
+				bobbyJones: ['BobbyJonesSoft']
+			},
+			colors: {
+				persian: {
+					50: '#fff8eb',
+					100: '#fdeac8',
+					200: '#facb74',
+					300: '#f9b850',
+					400: '#f79e28',
+					500: '#f17b0f',
+					600: '#d5580a',
+					700: '#b13a0c',
+					800: '#902e10',
+					900: '#762711',
+					950: '#441004'
+				},
+				glaucous: {
+					50: '#f3f7fb',
+					100: '#e3eef6',
+					200: '#cee3ef',
+					300: '#adcfe3',
+					400: '#85b6d5',
+					500: '#689dc9',
+					600: '#5586bb',
+					700: '#4e79b2',
+					800: '#41608c',
+					900: '#385070',
+					950: '#263245'
+				},
+				viridian: {
+					50: '#f4f9f7',
+					100: '#dbece4',
+					200: '#b7d8c9',
+					300: '#8bbda8',
+					400: '#629f87',
+					500: '#509179',
+					600: '#386957',
+					700: '#305548',
+					800: '#2a453d',
+					900: '#263b35',
+					950: '#12211d'
+				},
+				oil: {
+					50: '#f9f9ed',
+					100: '#f0f0d1',
+					200: '#e2e0a6',
+					300: '#d1ca73',
+					400: '#c2b54d',
+					500: '#b3a13f',
+					600: '#9a8234',
+					700: '#7c622c',
+					800: '#68502b',
+					900: '#5a4429',
+					950: '#2d2012'
+				}
+			}
+		}
+	},
+	plugins: []
+}

@@ -1,56 +1,61 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import {
-  SITE_DESCRIPTION,
-  SITE_TITLE,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-  MAIL,
-  PHONE,
-} from "../consts";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import About from "../assets/about.webp";
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_DESCRIPTION, SITE_TITLE, INSTAGRAM_URL, LINKEDIN_URL, MAIL, PHONE } from '../consts'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+import About from '../assets/about.webp'
+
+const title = 'I Miei Contatti'
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <BaseLayout>
-    <main class="min-h-svh flex justify-center items-center px-2">
-      <section
-        class="bg-cyan-950 shadow-2xl flex gap-6 py-4 px-8 rounded items-center flex-col sm:flex-row"
-      >
-        <div class="flex flex-col gap-2">
-          <h1 class="text-4xl font-bold text-sunshade-500">Contattami</h1>
-          <ul class="text-sunshade-50 space-y-1">
-            <li>
-              Instagram: <a
-                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
-                href={INSTAGRAM_URL}>sarinskovic</a
-              >
-            </li>
-            <li>
-              Linkedin: <a
-                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
-                href={LINKEDIN_URL}>Sara Stefanovic</a
-              >
-            </li>
-            <li>Mail: {MAIL}</li>
-            <li>Telefono: {PHONE}</li>
-            <li>
-              CV: <a
-                class="decoration-wavy underline underline-offset-2 hover:text-sunshade-400"
-                href={"/portfolio/cv.pdf"}
-                target="_blank">link</a
-              >
-            </li>
-          </ul>
-        </div>
-        <Image class="h-48 sm:h-96 w-fit" src={About} alt={"about"} />
-      </section>
-    </main>
-  </BaseLayout>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<BaseLayout>
+		<main class="flex min-h-svh flex-col items-center gap-8 px-2">
+			<div
+				class="w-fit rounded-xl border-4 border-black bg-persian-100 px-4 py-2 shadow-left-bottom sm:border-x-4 sm:border-black"
+			>
+				<div
+					class="container relative text-[4rem] leading-relaxed tracking-widest sm:leading-loose"
+				>
+					<section class="absolute z-10 font-bobbyJonesOutline text-black">{title}</section>
+					<section class="font-bobbyJones text-glaucous-700">{title}</section>
+				</div>
+			</div>
+			<section
+				class="flex min-h-96 flex-col items-center justify-between gap-6 rounded-xl border-4 border-black bg-cyan-950 p-4 px-8 py-4 text-cyan-50 shadow-left-bottom transition duration-500 hover:border-white hover:shadow-left-bottom-hover sm:flex-row"
+			>
+				<div class="flex flex-col gap-2">
+					<h1 class="text-4xl font-bold text-persian-500">Contattami</h1>
+					<ul class="space-y-1 text-persian-50">
+						<li>
+							Instagram: <a
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
+								href={INSTAGRAM_URL}>sarinskovic</a
+							>
+						</li>
+						<li>
+							Linkedin: <a
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
+								href={LINKEDIN_URL}>Sara Stefanovic</a
+							>
+						</li>
+						<li>Mail: {MAIL}</li>
+						<li>Telefono: {PHONE}</li>
+						<li>
+							CV: <a
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
+								href={'/portfolio/cv.pdf'}
+								target="_blank">link</a
+							>
+						</li>
+					</ul>
+				</div>
+				<Image class="h-48 w-fit sm:h-96" src={About} alt={'about'} />
+			</section>
+		</main>
+	</BaseLayout>
 </html>

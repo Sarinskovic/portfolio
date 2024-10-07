@@ -1,0 +1,71 @@
+---
+import BaseHead from '../../components/BaseHead.astro'
+import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import type { CompanyProps as Props } from '../../types/company'
+
+export function getStaticPaths() {
+	return COMPANY.map((c) => ({
+		params: { company: c.path },
+		props: {
+			...c
+		}
+	}))
+}
+
+const props = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<BaseLayout>
+		<div class="flex min-h-lvh flex-col items-center gap-4 px-4">
+			<div
+				class="border-y-4 border-y-black bg-persian-100 p-2 sm:rounded-xl sm:border-x-4 sm:border-x-black sm:shadow-left-bottom"
+			>
+				<div
+					class="container relative text-[4rem] leading-relaxed tracking-widest sm:leading-loose"
+				>
+					<section class="absolute z-10 font-bobbyJonesOutline text-black">
+						{props.title}
+					</section>
+					<section class="font-bobbyJones text-glaucous-700">
+						{props.title}
+					</section>
+				</div>
+			</div>
+			<section
+				class="container mx-auto my-4 min-h-96 justify-between space-y-4 rounded-xl border-4 border-black bg-persian-50 p-8 text-cyan-50 shadow-left-bottom"
+			>
+				<p class="text-xl text-gray-600">🖊️ {props.service}</p>
+				<p class="my-2 text-balance text-lg font-semibold text-gray-500">
+					{props.description}
+				</p>
+				<ul class="mt-4 list-disc pl-5">
+					{
+						props.articles.map((article) => (
+							<li class="my-2 text-lg">
+								<a
+									href={article.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center text-persian-600 decoration-wavy underline-offset-4 hover:underline"
+								>
+									{article.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</BaseLayout>
+</html>
+<style>
+	li::marker {
+		content: '📖 ';
+	}
+</style>
