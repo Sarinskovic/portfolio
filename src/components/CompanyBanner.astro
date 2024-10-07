@@ -1,5 +1,5 @@
 ---
-import Icon from './Icon/Icon.astro'
+import { Icon } from 'astro-icon/components'
 
 const { title, logo, description, path, rotation } = Astro.props
 ---
@@ -25,6 +25,6 @@ const { title, logo, description, path, rotation } = Astro.props
 	</div>
 	<div class="flex basis-1/4 items-center sm:basis-1/2">
 		<!-- <img class="h-96 w-full" src={logo} alt={logo} /> -->
-		<Icon icon={logo} class="h-20 w-fit" />
+		<Icon name={logo} class="h-16 w-fit" />
 	</div>
 </div>

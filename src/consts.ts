@@ -21,7 +21,7 @@ export const COMPANY = [
 		order: 1,
 		rotation: '-rotate-4',
 		title: 'Elle Decor',
-		logo: 'elleDecor',
+		logo: 'company/elleDecor',
 		path: 'elleDecor',
 		service: 'Copywriting per il Web',
 		description:
@@ -32,7 +32,7 @@ export const COMPANY = [
 		order: 2,
 		rotation: 'rotate-3 sm:-translate-x-20 sm:-translate-y-4',
 		title: "Harper's Bazaar",
-		logo: 'harper',
+		logo: 'company/harper',
 		path: 'harper',
 		service: 'Copywriting per il Web',
 		description:
@@ -43,7 +43,7 @@ export const COMPANY = [
 		order: 3,
 		rotation: '-rotate-6',
 		title: 'Esquire',
-		logo: 'esquire',
+		logo: 'company/esquire',
 		path: 'esquire',
 		service: 'Copywriting SEO',
 		description:
@@ -54,7 +54,7 @@ export const COMPANY = [
 		order: 4,
 		rotation: 'rotate-2',
 		title: 'Cosmopolitan',
-		logo: 'cosmopolitan',
+		logo: 'company/cosmopolitan',
 		path: 'cosmopolitan',
 		service: 'Copywriting per il Web',
 		description:
@@ -65,7 +65,7 @@ export const COMPANY = [
 		order: 5,
 		rotation: 'sm:translate-x-10',
 		title: 'Marie Claire',
-		logo: 'marie',
+		logo: 'company/marie',
 		path: 'marie',
 		service: 'Copywriting per il Web',
 		description:
@@ -76,7 +76,7 @@ export const COMPANY = [
 		order: 6,
 		rotation: 'rotate-2 sm:translate-y-6 sm:-translate-x-4',
 		title: "Gruppo L'Oréal",
-		logo: 'loreal',
+		logo: 'company/loreal',
 		path: 'loreal',
 		service: 'Copywriting SEO',
 		description:
