@@ -5,15 +5,14 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			textShadow: {
-				3: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black',
-				5: '-2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black',
-				7: '-3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black',
-				9: '-4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black',
-				11: '-5px -5px 0 black, 5px -5px 0 black, -5px 5px 0 black, 5px 5px 0 black'
+			boxShadow: {
+				'left-bottom': '8px 8px 0 rgba(0, 0, 0, 1)', // 3px shadow to the left and bottom
+				'left-bottom-hover': '8px 8px 0 #ffffff' // 3px shadow to the left and bottom
 			},
+
 			backgroundImage: {
-				'gradient-noise': 'url(/portfolio/noise.svg)'
+				'gradient-noise': 'url(/portfolio/noise.svg)',
+				dots: 'url(/portfolio/dots.svg)'
 			},
 			fontFamily: {
 				sans: ['Space Mono', ...defaultTheme.fontFamily.sans],
@@ -76,25 +75,5 @@ export default {
 			}
 		}
 	},
-	plugins: [
-		function ({ addUtilities }) {
-			addUtilities({
-				'.text-shadow-3': {
-					textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black'
-				},
-				'.text-shadow-5': {
-					textShadow: '-2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black'
-				},
-				'.text-shadow-7': {
-					textShadow: '-3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black'
-				},
-				'.text-shadow-9': {
-					textShadow: '-4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black'
-				},
-				'.text-shadow-11': {
-					textShadow: '-5px -5px 0 black, 5px -5px 0 black, -5px 5px 0 black, 5px 5px 0 black'
-				}
-			})
-		}
-	]
+	plugins: []
 }

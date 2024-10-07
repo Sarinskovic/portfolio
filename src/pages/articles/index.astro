@@ -1,0 +1,53 @@
+---
+import BaseHead from '../../components/BaseHead.astro'
+import CompanyBanner from '../../components/CompanyBanner.astro'
+import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import type { CompanyProps as Props } from '../../types/company'
+
+export function getStaticPaths() {
+	return COMPANY.map((c) => ({
+		params: { company: c.path },
+		props: {
+			...c
+		}
+	}))
+}
+
+const title = 'I miei articoli'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<BaseLayout>
+		<div class="flex flex-col items-center gap-16 px-2 py-12">
+			<div
+				class="w-fit rounded-xl border-4 border-black bg-persian-100 px-4 py-2 shadow-left-bottom sm:border-x-4 sm:border-black"
+			>
+				<div
+					class="container relative text-[4rem] leading-relaxed tracking-widest sm:leading-loose"
+				>
+					<section class="absolute z-10 font-bobbyJonesOutline text-black">{title}</section>
+					<section class="font-bobbyJones text-glaucous-700">{title}</section>
+				</div>
+			</div>
+			<section class="mx-auto grid w-3/4 grid-cols-1 gap-8 sm:grid-cols-2">
+				{
+					COMPANY.map((c, index) => (
+						<CompanyBanner
+							title={c.title}
+							index={index}
+							logo={c.logo}
+							description={c.description}
+							path={c.path}
+							rotation={c.rotation}
+						/>
+					))
+				}
+			</section>
+		</div>
+	</BaseLayout>
+</html>

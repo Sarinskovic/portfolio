@@ -2,16 +2,21 @@
 import { INSTAGRAM_URL, LINKEDIN_URL } from '../consts'
 
 const menu = [
-	{ path: '/portfolio', label: 'Home' },
+	{ path: '/portfolio/', label: 'Home' },
+	{ path: '/portfolio/articles', label: 'I miei Articoli' },
 	{ path: '/portfolio/contact-me', label: 'Contact Me!' }
 ]
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+
 const open = false
 ---
 
 <header
 	x-cloak
 	x-data=`{ open: ${open} }`
-	class={`fixed left-0 top-0 z-50 w-full bg-sunshade-50 shadow-md`}
+	class={`fixed left-0 top-0 z-50 w-full bg-glaucous-700 shadow-md border-b-4 border-b-black`}
 >
 	<div class="container mx-auto w-full">
 		<div class="flex w-full flex-wrap items-center justify-between p-4">
@@ -58,16 +63,23 @@ const open = false
 				x-show="open"
 				x-transition
 				id="navbar-menu"
-				class={`menu fixed left-0 top-0 w-full h-svh basis-2/3 sm:justify-end bg-black/65 text-lg text-apricot-200 sm:static sm:flex sm:h-fit sm:bg-transparent`}
+				class={`menu fixed left-0 text-white top-0 w-full h-svh basis-2/3 sm:justify-end bg-black/65 text-lg text-apricot-200 sm:static sm:flex sm:h-fit sm:bg-transparent`}
 			>
 				<ul
-					class={`flex w-full flex-col gap-6  bg-sunshade-50 pb-8 pt-16 sm:w-fit sm:flex-row sm:py-0`}
+					x-bind:class="{'border-b-4 border-b-black': open, 'border-none': !open}"
+					class={`flex w-full flex-col gap-6 bg-glaucous-700 border-b-4 border-b-black pb-8 pt-16 sm:w-fit sm:flex-row sm:py-0`}
 				>
 					{
 						menu.map((item) => (
 							<li class="w-full text-center sm:w-fit sm:bg-transparent">
 								<a
-									class={`font-elza tracking-wider decoration-wavy decoration-2 underline-offset-8 hover:underline`}
+									class:list={[
+										`font-elza tracking-wider decoration-wavy decoration-2 underline-offset-8 hover:underline`,
+										{
+											'font-bold text-persian-400 underline decoration-wavy decoration-2 underline-offset-8':
+												currentPath === item.path.slice(1)
+										}
+									]}
 									href={item.path}
 								>
 									{item.label}

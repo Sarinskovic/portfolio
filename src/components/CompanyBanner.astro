@@ -1,27 +1,30 @@
 ---
-const { title, index, logo, description, path } = Astro.props
+import Icon from './Icon/Icon.astro'
+
+const { title, logo, description, path, rotation } = Astro.props
 ---
 
 <div
-	class={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} font-bobbyJones tracking-wider gap-4 border-b-[1px] border-b-cyan-700 justify-between min-h-96 p-4 text-cyan-50`}
+	class={`flex ${rotation} flex-col bg-viridian-600 font-bobbyJones tracking-wider z-10 gap-4 shadow-left-bottom hover:shadow-left-bottom-hover transition duration-500 rounded-xl border-4 border-black justify-between min-h-96 p-4 text-cyan-50 hover:border-white`}
 >
-	<div class={`basis-1/2 flex justify-center flex-col gap-4 items-center`}>
+	<div class={'basis-3/4 sm:basis-1/2 flex justify-center flex-col gap-4'}>
 		<div class="flex flex-col gap-4">
 			<h1 class="max-w-96 text-2xl font-bold text-orange-400 sm:text-3xl">
 				{title}
 			</h1>
-			<p class={`max-w-96 text-sm text-balance sm:text-lg`}>
+			<p class={`text-sm text-pretty sm:max-w-[500px] sm:text-lg`}>
 				{description}
 			</p>
 			<a
-				href={`/portfolio/company/${path}`}
-				class="text-sunshade-300 text-xs underline decoration-wavy underline-offset-8 hover:decoration-solid sm:text-lg"
+				href={`/portfolio/articles/${path}`}
+				class="text-xs text-orange-300 underline decoration-wavy underline-offset-8 hover:decoration-solid sm:text-lg"
 			>
 				Scopri di più
 			</a>
 		</div>
 	</div>
-	<div class="flex basis-1/2 items-center justify-center object-contain">
-		<img class="h-96 w-full" src={logo} alt={logo} />
+	<div class="flex basis-1/4 items-center sm:basis-1/2">
+		<!-- <img class="h-96 w-full" src={logo} alt={logo} /> -->
+		<Icon icon={logo} class="h-20 w-fit" />
 	</div>
 </div>

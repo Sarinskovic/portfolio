@@ -4,6 +4,8 @@ import Header from '../components/Header.astro'
 import BaseHead from '../components/BaseHead.astro'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
 import Footer from '../components/Footer.astro'
+
+const { home } = Astro.props
 ---
 
 <html lang="en">
@@ -11,9 +13,11 @@ import Footer from '../components/Footer.astro'
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 
-	<body class="min-h-lvh bg-persian-200">
+	<body class="min-h-lvh bg-persian-200 bg-dots">
 		<Header />
-		<main class="mt-[80px] flex flex-col justify-center">
+		<main
+			class:list={['container mx-auto flex flex-col', { 'mt-[80px]': home, 'mt-[92px]': !home }]}
+		>
 			<slot />
 		</main>
 		<Footer />

@@ -4,6 +4,8 @@ import { SITE_DESCRIPTION, SITE_TITLE, INSTAGRAM_URL, LINKEDIN_URL, MAIL, PHONE 
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { Image } from 'astro:assets'
 import About from '../assets/about.webp'
+
+const title = 'I Miei Contatti'
 ---
 
 <!doctype html>
@@ -12,22 +14,32 @@ import About from '../assets/about.webp'
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<BaseLayout>
-		<main class="flex min-h-svh items-center justify-center px-2">
+		<main class="flex min-h-svh flex-col items-center gap-8 px-2">
+			<div
+				class="w-fit rounded-xl border-4 border-black bg-persian-100 px-4 py-2 shadow-left-bottom sm:border-x-4 sm:border-black"
+			>
+				<div
+					class="container relative text-[4rem] leading-relaxed tracking-widest sm:leading-loose"
+				>
+					<section class="absolute z-10 font-bobbyJonesOutline text-black">{title}</section>
+					<section class="font-bobbyJones text-glaucous-700">{title}</section>
+				</div>
+			</div>
 			<section
-				class="flex flex-col items-center gap-6 rounded bg-cyan-950 px-8 py-4 shadow-2xl sm:flex-row"
+				class="flex min-h-96 flex-col items-center justify-between gap-6 rounded-xl border-4 border-black bg-cyan-950 p-4 px-8 py-4 text-cyan-50 shadow-left-bottom transition duration-500 hover:border-white hover:shadow-left-bottom-hover sm:flex-row"
 			>
 				<div class="flex flex-col gap-2">
-					<h1 class="text-sunshade-500 text-4xl font-bold">Contattami</h1>
-					<ul class="text-sunshade-50 space-y-1">
+					<h1 class="text-4xl font-bold text-persian-500">Contattami</h1>
+					<ul class="space-y-1 text-persian-50">
 						<li>
 							Instagram: <a
-								class="hover:text-sunshade-400 underline decoration-wavy underline-offset-2"
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
 								href={INSTAGRAM_URL}>sarinskovic</a
 							>
 						</li>
 						<li>
 							Linkedin: <a
-								class="hover:text-sunshade-400 underline decoration-wavy underline-offset-2"
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
 								href={LINKEDIN_URL}>Sara Stefanovic</a
 							>
 						</li>
@@ -35,7 +47,7 @@ import About from '../assets/about.webp'
 						<li>Telefono: {PHONE}</li>
 						<li>
 							CV: <a
-								class="hover:text-sunshade-400 underline decoration-wavy underline-offset-2"
+								class="underline decoration-wavy underline-offset-2 hover:text-persian-400"
 								href={'/portfolio/cv.pdf'}
 								target="_blank">link</a
 							>

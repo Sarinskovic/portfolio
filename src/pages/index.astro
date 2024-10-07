@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import BaseHead from '../components/BaseHead.astro'
 import CompanyBanner from '../components/CompanyBanner.astro'
-import { COMPANY, SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import { COMPANY, INDEX_DESC, SITE_DESCRIPTION, SITE_TITLE } from '../consts'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 import Asset1 from '../assets/01.webp'
@@ -15,24 +15,22 @@ import Asset3 from '../assets/03.webp'
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<BaseLayout>
+	<BaseLayout home>
 		<Image src={Asset1} alt="" />
-		<section
-			class="text-md bg-sunshade-50 container mx-auto rounded-sm p-2 px-4 font-bobbyJones leading-loose tracking-widest text-glaucous-700 text-shadow-5 sm:text-5xl"
+		<div
+			class="border-y-4 border-y-black bg-persian-100 p-2 sm:rounded-xl sm:border-x-4 sm:border-x-black sm:shadow-left-bottom"
 		>
-			Da sempre con la testa tra le parole e lo sguardo puntato al futuro, mi sono laureata
-			magistrale in Lingue e Comunicazione. Il mio percorso nel mondo del copywriting è iniziato
-			collaborando con testate e magazine online, dove ho avuto l'occasione di scrivere praticamente
-			di tutto: dal cinema, alle nuove tecnologie, passando per la storia e la sostenibilità. Ma non
-			mi sono fermata lì! Nel frattempo, tra un articolo e l’altro, ho dato sfogo alla mia
-			creatività collaborando su diversi progetti social media, dove ho imparato a destreggiarmi tra
-			hashtag e copy ad effetto. La passione per il digital mi ha portato a specializzarmi nella
-			creazione di testi SEO, dove il linguaggio incontra l’algoritmo in una danza perfetta, dando
-			vita a contenuti che non solo piacciono agli utenti, ma fanno anche gola ai motori di ricerca.
-			Oggi, con un pizzico di ironia, aiuto brand e progetti a farsi notare nel vasto mondo online.
-		</section>
+			<div class="container relative text-4xl leading-relaxed tracking-widest sm:leading-loose">
+				<section class="absolute z-10 font-bobbyJonesOutline text-black">
+					{INDEX_DESC}
+				</section>
+				<section class="font-bobbyJones text-glaucous-700">
+					{INDEX_DESC}
+				</section>
+			</div>
+		</div>
 		<Image src={Asset2} alt="" />
-		<section class="w-full bg-cyan-950">
+		<section class="mx-auto grid w-3/4 grid-cols-1 gap-8 sm:grid-cols-2">
 			{
 				COMPANY.map((c, index) => (
 					<CompanyBanner
@@ -41,6 +39,7 @@ import Asset3 from '../assets/03.webp'
 						logo={c.logo}
 						description={c.description}
 						path={c.path}
+						rotation={c.rotation}
 					/>
 				))
 			}

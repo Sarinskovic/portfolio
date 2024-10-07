@@ -1,0 +1,23 @@
+---
+import Loreal from './company/Loreal.astro'
+import ElleDecor from './company/ElleDecor.astro'
+import Marie from './company/Marie.astro'
+import Harper from './company/Harper.astro'
+import Esquire from './company/Esquire.astro'
+import Cosmopolitan from './company/Cosmopolitan.astro'
+
+const { icon = '', width = '24', height = '24', class: classeName = '' } = Astro.props
+
+const iconMap: Record<string, unknown> = {
+	loreal: Loreal,
+	elleDecor: ElleDecor,
+	marie: Marie,
+	harper: Harper,
+	esquire: Esquire,
+	cosmopolitan: Cosmopolitan
+}
+
+const IconComponent = iconMap[icon as keyof typeof iconMap]
+---
+
+{IconComponent ? <IconComponent icon={icon} class={classeName} /> : <span>Icon not found</span>}
