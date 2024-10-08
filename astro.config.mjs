@@ -9,6 +9,12 @@ import icon from 'astro-icon'
 export default defineConfig({
 	site: 'https://sarinskovic.github.io',
 	// base: '/portfolio/',
+	redirects: {
+		'/portfolio': {
+			status: 302,
+			destination: '/'
+		}
+	},
 
 	integrations: [sitemap(), tailwind(), alpinejs(), icon()]
 })
