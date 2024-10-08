@@ -11,8 +11,8 @@ export default {
 			},
 
 			backgroundImage: {
-				'gradient-noise': 'url(/portfolio/noise.svg)',
-				dots: 'url(/portfolio/dots.svg)'
+				'gradient-noise': 'url(/noise.svg)',
+				dots: 'url(/dots.svg)'
 			},
 			fontFamily: {
 				sans: ['Space Mono', ...defaultTheme.fontFamily.sans],

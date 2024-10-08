@@ -8,7 +8,7 @@ export const SITE_DESCRIPTION =
 	'Avete bisogno di indicizzarvi o di contenuti creativi? Il copywriting è molto più della SEO. Scoprite di più su di me, su quello che fa un copywriter e come rimanere sempre tra i primi su Google'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/sara-stefanovic-92708b123/'
 export const INSTAGRAM_URL = 'https://www.instagram.com/sarinskovic?igsh=MTB6OXR1Mmxiams1cQ=='
-export const DEV_PORTFOLIO = 'https://locatandre.github.io/portfolio'
+export const DEV_PORTFOLIO = 'https://locatandre.github.io'
 
 export const MAIL = 'stefanovicsara03@gmail.com'
 export const PHONE = '+39 340 376 3978'
